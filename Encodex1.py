@@ -440,7 +440,8 @@ exec(marshal.loads(zlib.decompress(c)))'''
     print_info("Applying optimized  encryption...")
     
     # OPTIMIZED final code - minimal footprint
-    final_code = f'''import base64,os,sys,tempfile
+    final_code = f'''import os, sys, time, base64,tempfile, platform
+plat = platform.system().lower()
 d="{encoded}"
 e=base64.b64decode(d).decode()
 t=tempfile.gettempdir()
